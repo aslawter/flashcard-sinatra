@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--A flashcard application-->
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ultimate Flashcard Situation</title>
+	</head>
+	<body>
+		<h1>Oh So Sweet Flashcard Decks</h1>
+		<p>Below is a list of flashcard decks to choose from</p>
+		<h2>Decks</h2>
+		<ul>
+			<% @decks.each do |deck| %>
+					<li><a href="/decks/<%= deck.id %>"><%= deck.name %></a></li>
+				<% end %>
+			</ul>
+	</body>
+	</html>
+
