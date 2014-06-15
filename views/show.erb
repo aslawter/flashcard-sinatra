@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<title><%=@deck.name%></title>
+	</head>
+	<body>
+		<h1><%=@deck.name%></h1>
+			<ul><% @flashcards.each do |flashcard| %>
+				<li><a href="/cards/<%= flashcard.id %>"><%= @flashcard.question %></a></li>
+		<% end %>
+		</ul>
+		<p>This is a page with stuff on it</p>
+	</body>
+</html>
