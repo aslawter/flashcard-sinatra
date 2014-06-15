@@ -8,7 +8,10 @@ ActiveRecord::Base.establish_connection(
 	)
 
 class Deck < ActiveRecord::Base
-	
+	has_many :flashcards, dependent: :destroy
+end
+
+class Flashcard < ActiveRecord::Base
 end
 
 get "/" do
@@ -16,5 +19,11 @@ get "/" do
 	erb :index
 end
 
+get "/decks/:id" do
+	@deck = Deck.find(params[:id])
+	@flashcards = @deck.flashcard
+	
+	erb :show
+end
 
 
